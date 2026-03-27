@@ -1,20 +1,20 @@
 package com.example.task.service;
 
-import java.util.UUID;
-
 public class Task {
 
-    private String id;
+    private static int next_id = 0;
+
+    private int id;
     private String description;
     private String status;
 
-    public void Task(String id, String description, String status){
-        this.id = UUID.randomUUID().toString();
+    public Task(String description) {
+        this.id = ++Task.next_id ;
         this.description = description;
-        this.status = status;
+        this.status = "En cours";
     }
 
-    public String getId(){
+    public int getId(){
         return id;
     }
     public String getDescription(){
@@ -24,7 +24,7 @@ public class Task {
         return status;
     }
 
-    public void seStatus(String status){
+    public void setStatus(String status){
         this.status = status;
     }
 }
