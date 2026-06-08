@@ -10,6 +10,12 @@ public class TaskService {
 
     private List<Task> tasks = new ArrayList<>();
 
+    public TaskService() {
+        tasks.add(new Task("Faire les courses"));
+        tasks.add(new Task("Lire un livre"));
+        tasks.add(new Task("Faire du sport"));
+    }
+
    public Task addTask(String description) {
        Task task = new Task(description);
        tasks.add(task);
